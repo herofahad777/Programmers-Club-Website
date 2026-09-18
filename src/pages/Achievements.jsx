@@ -16,24 +16,23 @@ import EmptyState from '../components/achievements/EmptyState';
  */
 import achievementsData from '../data/achievements.json';
 
+const ALL_ACHIEVEMENTS = achievementsData.achievements || [];
+const AVAILABLE_YEARS = Array.from(
+  new Set(ALL_ACHIEVEMENTS.map((a) => a.year).filter(Boolean))
+).sort((a, b) => b - a);
+
 /**
  * Achievements & Hall of Fame Page
  * Route: /achievements
  */
 export default function Achievements() {
-  const { achievements = [] } = achievementsData;
+  const achievements = ALL_ACHIEVEMENTS;
 
   /* ─── State Management ─── */
   const [selectedYear, setSelectedYear] = useState('All');
   const [activeCategory, setActiveCategory] = useState('All');
   const [activeLevel, setActiveLevel] = useState('All');
   const [selectedAchievement, setSelectedAchievement] = useState(null);
-
-  /* ─── Available Years in Dataset ─── */
-  const availableYears = useMemo(() => {
-    const years = achievements.map((a) => a.year).filter(Boolean);
-    return Array.from(new Set(years)).sort((a, b) => b - a);
-  }, [achievements]);
 
   /* ─── Filtered Achievements ─── */
   const filteredAchievements = useMemo(() => {
@@ -87,7 +86,7 @@ export default function Achievements() {
         <AchievementDateFilter
           selectedYear={selectedYear}
           onYearChange={setSelectedYear}
-          availableYears={availableYears}
+          availableYears={AVAILABLE_YEARS}
         />
 
         {/* Dropdown Filters for Category & Level */}
