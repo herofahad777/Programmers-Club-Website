@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sparkles, Calendar, Users, Shuffle, ChevronRight, Award, ExternalLink } from 'lucide-react';
 import { getAchievementImage } from './imageResolver';
@@ -6,6 +6,7 @@ import { getAchievementImage } from './imageResolver';
 /**
  * AchievementHighlight — Contained spotlight banner above the stats bar.
  * Highlights featured or random achievements without overwhelming the screen.
+ * Automatically rotates every 15 seconds, with pause-on-hover.
  */
 export default function AchievementHighlight({ achievements = [], onSelect }) {
   // Prefer featured achievements, fallback to all achievements
@@ -14,6 +15,18 @@ export default function AchievementHighlight({ achievements = [], onSelect }) {
     : achievements;
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  // Auto-rotate every 15 seconds (pausing while hovered)
+  useEffect(() => {
+    if (highlightPool.length <= 1 || isPaused) return;
+
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % highlightPool.length);
+    }, 15000);
+
+    return () => clearInterval(timer);
+  }, [highlightPool.length, isPaused, currentIndex]);
 
   if (highlightPool.length === 0) return null;
 
@@ -44,7 +57,11 @@ export default function AchievementHighlight({ achievements = [], onSelect }) {
       aria-label="Featured achievement spotlight"
       className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-2"
     >
-      <div className="relative overflow-hidden rounded-2xl bg-surface border border-primary/30 p-5 sm:p-6 lg:p-7 shadow-[0_0_25px_rgba(123,193,66,0.07)]">
+      <div
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+        className="relative overflow-hidden rounded-2xl bg-surface border border-primary/30 p-5 sm:p-6 lg:p-7 shadow-[0_0_25px_rgba(123,193,66,0.07)]"
+      >
         {/* Subtle decorative glow */}
         <div
           className="absolute -right-20 -top-20 w-64 h-64 rounded-full bg-primary/10 blur-3xl pointer-events-none"
@@ -59,6 +76,28 @@ export default function AchievementHighlight({ achievements = [], onSelect }) {
           </div>
 
           <div className="flex items-center gap-2">
+            {/* Slide Indicator Dots */}
+            {highlightPool.length > 1 && (
+              <div className="flex items-center gap-1 mr-1" aria-label="Spotlight slide indicators">
+                {highlightPool.map((_, idx) => (
+                  <button
+                    key={idx}
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setCurrentIndex(idx);
+                    }}
+                    aria-label={`Go to slide ${idx + 1}`}
+                    className={`h-1.5 rounded-full transition-all duration-300 ${
+                      idx === currentIndex % highlightPool.length
+                        ? 'w-4 bg-primary'
+                        : 'w-1.5 bg-border-hover hover:bg-text-muted'
+                    }`}
+                  />
+                ))}
+              </div>
+            )}
+
             <button
               type="button"
               onClick={randomHighlight}

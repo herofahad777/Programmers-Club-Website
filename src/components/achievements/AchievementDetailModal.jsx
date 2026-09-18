@@ -54,69 +54,72 @@ export default function AchievementDetailModal({ achievement, onClose }) {
       role="dialog"
       aria-modal="true"
       aria-labelledby="achievement-modal-title"
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md animate-in fade-in duration-200"
       onClick={onClose}
     >
-      <motion.div
-        initial={{ opacity: 0, scale: 0.95, y: 15 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
-        exit={{ opacity: 0, scale: 0.95, y: 15 }}
-        transition={{ duration: 0.2 }}
+      {/* Modal Wrapper with External Close Button */}
+      <div
+        className="relative w-full max-w-4xl max-h-[94vh] flex flex-col"
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl bg-surface border border-border shadow-2xl flex flex-col"
       >
-        {/* Close Button */}
-        <button
-          type="button"
-          onClick={onClose}
-          aria-label="Close achievement details"
-          className="absolute top-4 right-4 z-20 flex items-center justify-center w-9 h-9 rounded-full bg-bg/85 backdrop-blur-md border border-border text-text-muted hover:text-text-primary hover:border-primary/50 transition-colors focus-visible:outline-2 focus-visible:outline-primary"
-        >
-          <X className="w-5 h-5" aria-hidden="true" />
-        </button>
-
-        {/* 1. Header Image Banner */}
-        <div className="relative aspect-[16/9] w-full bg-surface-card overflow-hidden border-b border-border">
-          {resolvedImage ? (
-            <img
-              src={resolvedImage}
-              alt={title}
-              className="w-full h-full object-cover"
-            />
-          ) : (
-            <div className="w-full h-full flex flex-col items-center justify-center gap-2 text-text-muted bg-gradient-to-br from-surface to-surface-card p-6 text-center">
-              <Award className="w-12 h-12 text-primary/40" aria-hidden="true" />
-              <span className="text-sm text-text-muted font-medium">Programmers Club Milestone</span>
-            </div>
-          )}
-
-          {/* Featured badge */}
-          {featured && (
-            <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-bg/90 backdrop-blur-md border border-primary/40 text-xs font-semibold uppercase tracking-wider text-primary shadow-lg">
-              <Star className="w-3.5 h-3.5 fill-primary" aria-hidden="true" />
-              <span>Featured Highlight</span>
-            </div>
-          )}
-
-          {/* Demo badge */}
-          {demo && (
-            <div className="absolute bottom-3 right-3 px-2.5 py-0.5 rounded-md bg-accent/90 backdrop-blur-md border border-border text-[11px] font-mono text-text-muted">
-              DEMO RECORD
-            </div>
-          )}
+        {/* Close Button Outside of Detailed Card View */}
+        <div className="flex justify-end pb-2 shrink-0">
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="Close achievement details"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface/90 hover:bg-surface border border-border text-text-muted hover:text-text-primary hover:border-primary/50 transition-all focus-visible:outline-2 focus-visible:outline-primary shadow-lg text-xs font-mono group"
+          >
+            <X className="w-4 h-4 group-hover:scale-110 transition-transform" aria-hidden="true" />
+            <span>Close</span>
+          </button>
         </div>
 
-        {/* 2. Detailed Body */}
-        <div className="p-6 sm:p-8 space-y-6">
-          {/* Metadata Row: Category, Level & Date */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95, y: 15 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          exit={{ opacity: 0, scale: 0.95, y: 15 }}
+          transition={{ duration: 0.2 }}
+          className="relative w-full overflow-y-auto rounded-2xl bg-surface border border-border shadow-2xl flex flex-col [scrollbar-width:thin] [scrollbar-color:var(--color-primary)_transparent] [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:bg-border-hover hover:[&::-webkit-scrollbar-thumb]:bg-primary [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-surface/50"
+        >
+          {/* 1. Header Image Banner (Fit In Size, 16:9 Aspect Ratio Container) */}
+          <div className="relative w-full aspect-[16/9] shrink-0 bg-black/40 overflow-hidden border-b border-border flex items-center justify-center p-3 sm:p-5">
+            {resolvedImage ? (
+              <img
+                src={resolvedImage}
+                alt={title}
+                className="w-full h-full object-contain rounded-lg"
+              />
+            ) : (
+              <div className="w-full h-full flex flex-col items-center justify-center gap-2 text-text-muted bg-gradient-to-br from-surface to-surface-card p-6 text-center">
+                <Award className="w-12 h-12 text-primary/40" aria-hidden="true" />
+                <span className="text-sm text-text-muted font-medium">Programmers Club Milestone</span>
+              </div>
+            )}
+          </div>
+
+          {/* 2. Detailed Body */}
+          <div className="p-6 sm:p-8 space-y-6">
+          {/* Metadata Row: Featured Tag + Category + Level + Date (Cleanly grouped together) */}
           <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-border/60">
             <div className="flex flex-wrap items-center gap-2">
+              {featured && (
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-primary/15 text-primary border border-primary/30 shadow-sm">
+                  <Star className="w-3.5 h-3.5 fill-primary text-primary" aria-hidden="true" />
+                  <span>Featured Highlight</span>
+                </span>
+              )}
               <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold border ${categoryStyle}`}>
                 {category}
               </span>
               <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold border ${levelStyle}`}>
                 {level} Level
               </span>
+              {demo && (
+                <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-mono text-text-muted bg-accent border border-border">
+                  Demo Record
+                </span>
+              )}
             </div>
 
             <div className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-mono text-text-muted">
@@ -129,7 +132,7 @@ export default function AchievementDetailModal({ achievement, onClose }) {
           <div>
             <h2
               id="achievement-modal-title"
-              className="text-xl sm:text-2xl font-bold font-heading text-text-primary leading-snug"
+              className="text-xl sm:text-2xl lg:text-3xl font-bold font-heading text-text-primary leading-snug"
             >
               {title}
             </h2>
@@ -190,5 +193,6 @@ export default function AchievementDetailModal({ achievement, onClose }) {
         </div>
       </motion.div>
     </div>
-  );
+  </div>
+);
 }

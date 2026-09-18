@@ -129,14 +129,9 @@ export default function AchievementCard({ achievement, index = 0, onSelect }) {
         <div className="pt-3 border-t border-border/60 mt-auto">
           {winnerRoster.length > 0 ? (
             <div>
-              <div className="flex items-center justify-between gap-1.5 text-[11px] font-semibold text-text-muted uppercase tracking-wider mb-2">
-                <div className="flex items-center gap-1.5">
-                  <Users className="w-3.5 h-3.5 text-primary" aria-hidden="true" />
-                  <span>Winners / Team</span>
-                </div>
-                <span className="text-[10px] text-primary/80 group-hover:underline">
-                  Click to expand
-                </span>
+              <div className="flex items-center gap-1.5 text-[11px] font-semibold text-text-muted uppercase tracking-wider mb-2">
+                <Users className="w-3.5 h-3.5 text-primary" aria-hidden="true" />
+                <span>Winners / Team</span>
               </div>
               <div className="flex flex-wrap items-center gap-1.5">
                 {winnerRoster.map((winner, i) => (
@@ -150,14 +145,9 @@ export default function AchievementCard({ achievement, index = 0, onSelect }) {
               </div>
             </div>
           ) : (
-            <div className="flex items-center justify-between gap-1.5 text-xs text-text-muted">
-              <div className="flex items-center gap-1.5 italic">
-                <Users className="w-3.5 h-3.5 text-text-muted" aria-hidden="true" />
-                <span>Individual Achievement</span>
-              </div>
-              <span className="text-[10px] text-primary/80 group-hover:underline">
-                Click to expand
-              </span>
+            <div className="flex items-center gap-1.5 text-xs text-text-muted italic">
+              <Users className="w-3.5 h-3.5 text-text-muted" aria-hidden="true" />
+              <span>Individual Achievement</span>
             </div>
           )}
         </div>
