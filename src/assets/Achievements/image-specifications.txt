@@ -1,0 +1,49 @@
+================================================================================
+PROGRAMMERS CLUB (AIKTC) — ACHIEVEMENTS IMAGE SPECIFICATIONS
+================================================================================
+
+This document specifies the technical and design standards for images submitted
+and displayed on the official Programmers Club Achievements & Hall of Fame page.
+
+1. RECOMMENDED DIMENSIONS & ASPECT RATIO
+--------------------------------------------------------------------------------
+- Preferred Aspect Ratio : 16:9 (Standard widescreen)
+- Recommended Resolution : 1200 x 675 pixels
+- Minimum Resolution     : 600 x 338 pixels
+- Maximum Resolution     : 1920 x 1080 pixels
+- Alternative Ratio      : 4:3 (e.g. 1200 x 900 px) for certificates / awards
+
+2. FILE FORMAT & FILE SIZE
+--------------------------------------------------------------------------------
+- Recommended Format     : .webp (Best compression with crisp quality)
+- Accepted Formats       : .webp, .png, .jpg, .svg
+- Target File Size       : Under 250 KB (Compressed for high page performance)
+- Maximum File Size      : 500 KB (Images exceeding this will slow down load time)
+
+3. FRAMING & COMPOSITION GUIDELINES
+--------------------------------------------------------------------------------
+- Centered Subject       : Keep winners, trophies, or certificates centered with
+                           at least 10% margin from all edges so card cropping
+                           does not cut off faces or critical text.
+- High Contrast / Clarity: Avoid blurry or dimly lit phone captures. Ensure text
+                           on certificates and badges is legible.
+- Safe Area              : Since card image containers use object-fit: cover,
+                           the top and bottom or sides may be subtly cropped on
+                           different device screen sizes.
+
+4. FILE NAMING CONVENTION
+--------------------------------------------------------------------------------
+- Lowercase, kebab-case filename matching the event and year:
+  Examples:
+  - sih-2025.webp
+  - ieee-xtreme-2024.webp
+  - research-iot-2024.webp
+  - code-sprint-2023.webp
+
+5. HOW TO LINK IN achievements.json
+--------------------------------------------------------------------------------
+In `src/data/achievements.json`, specify only the filename:
+"image": "sih-2025.svg"   (or "sih-2025.webp")
+
+The application dynamically loads and bundles assets from this directory.
+================================================================================
