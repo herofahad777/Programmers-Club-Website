@@ -59,7 +59,7 @@ export default function AchievementDetailModal({ achievement, onClose }) {
     >
       {/* Modal Wrapper with External Close Button */}
       <div
-        className="relative w-full max-w-4xl max-h-[94vh] flex flex-col"
+        className="relative w-full max-w-5xl max-h-[94vh] flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button Outside of Detailed Card View */}
@@ -82,17 +82,17 @@ export default function AchievementDetailModal({ achievement, onClose }) {
           transition={{ duration: 0.2 }}
           className="relative w-full overflow-y-auto rounded-2xl bg-surface border border-border shadow-2xl flex flex-col [scrollbar-width:thin] [scrollbar-color:var(--color-primary)_transparent] [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:bg-border-hover hover:[&::-webkit-scrollbar-thumb]:bg-primary [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-surface/50"
         >
-          {/* 1. Header Image Banner (Fit In Size, 16:9 Aspect Ratio Container) */}
-          <div className="relative w-full aspect-[16/9] shrink-0 bg-black/40 overflow-hidden border-b border-border flex items-center justify-center p-3 sm:p-5">
+          {/* 1. Header Image Banner (True 16:9, Expanded Defined Area, Fit Without Cropping) */}
+          <div className="relative w-full aspect-[16/9] shrink-0 bg-surface-card overflow-hidden border-b border-border flex items-center justify-center">
             {resolvedImage ? (
               <img
                 src={resolvedImage}
                 alt={title}
-                className="w-full h-full object-contain rounded-lg"
+                className="w-full h-full object-contain"
               />
             ) : (
               <div className="w-full h-full flex flex-col items-center justify-center gap-2 text-text-muted bg-gradient-to-br from-surface to-surface-card p-6 text-center">
-                <Award className="w-12 h-12 text-primary/40" aria-hidden="true" />
+                <Award className="w-14 h-14 text-primary/40" aria-hidden="true" />
                 <span className="text-sm text-text-muted font-medium">Programmers Club Milestone</span>
               </div>
             )}
