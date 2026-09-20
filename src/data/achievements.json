@@ -1,0 +1,85 @@
+{
+  "achievements": [
+    {
+      "id": 1,
+      "title": "Smart India Hackathon 2025 - 1st Runner Up",
+      "date": "December 2025",
+      "category": "Hackathon",
+      "level": "National",
+      "description": "CogniDetect is an AI-powered cognitive health screening platform designed for the early detection of potential dementia-related cognitive decline by analyzing speech patterns, cognitive assessment responses, eye movements, and behavioral indicators. It combines React, FastAPI, Python, AI/ML models, PostgreSQL, and Firebase Authentication to provide an accessible screening workflow and structured cognitive insights for users and healthcare professionals.",
+      "teamName": "NEURAL NEXUS",
+      "winners": [
+        "Aman Antuley (Leader)",
+        "Sumaiya Dadnak",
+        "Alamin Mondal",
+        "Zain Pawle"
+      ],
+      "organizerVenue": "The Ministry of Education, Government of India",
+      "links": [
+        {
+          "label": "LinkedIn",
+          "url": "https://www.linkedin.com/posts/aman-antuley-8974ab26a_sih2025-smartindiahackathon-teamneuralnexus-activity-7405132415393931264-D_08"
+        }
+      ],
+      "images": [
+        "id-1.webp"
+      ],
+      "featured": true,
+      "demo": false
+    },
+    {
+      "id": 2,
+      "title": "Internal Smart India Hackathon 2026 - 2nd Runner Up",
+      "date": "September 2026",
+      "category": "Hackathon",
+      "level": "College",
+      "description": "PharmaLoop AI is a smart, multi-role platform designed to improve coordination, transparency, and accountability in healthcare-related workflows. It brings users, service providers, and administrators together through a streamlined digital experience, with tracking, verification, and reward-based engagement.",
+      "teamName": "PROMPT PILOTS",
+      "winners": [
+        "Sayed Hammaad Imtiyaz",
+        "Sayyed Anas Akbar",
+        "Jamadar Toufiq Rashid",
+        "Pirkhan Ayesha Abdul Vahid",
+        "Narbage Aachal Ranjit",
+        "Shaikh Mantasha Shakil Ahmed"
+      ],
+      "organizerVenue": "Anjuman-I-Islam's Kalsekar Technical Campus • New Panvel",
+      "links": [
+        {
+          "label": "LinkedIn",
+          "url": "https://www.linkedin.com/posts/sayed-hammaad-imtiyaz-722b92284_smartindiahackathon-sih2026-hackathon-activity-7502383329699328000-tJRc"
+        }
+      ],
+      "images": [
+        "id-2.webp",
+        "id-2_zoomin.webp"
+      ],
+      "featured": true,
+      "demo": false
+    },
+    {
+      "id": 3,
+      "title": "Google Student Ambassador 2026",
+      "date": "May 2026",
+      "category": "Leadership / Community",
+      "level": "National",
+      "description": "Selected as a Google Student Ambassador 2026, representing the student developer community and contributing to Google-led programs, learning initiatives, and technology-focused community activities. The role provides opportunities to engage with fellow students, promote technology awareness, and support knowledge sharing within the developer community.",
+      "teamName": "",
+      "winners": [
+        "JISHAN SHAKIL MOMIN"
+      ],
+      "organizerVenue": "Google",
+      "links": [
+        {
+          "label": "LinkedIn",
+          "url": "https://www.linkedin.com/posts/jishanmomin2606_google-gemini-googlestudentambassador-activity-7467574091290435584-lB0B"
+        }
+      ],
+      "images": [
+        "id-3.webp"
+      ],
+      "featured": true,
+      "demo": false
+    }
+  ]
+}
