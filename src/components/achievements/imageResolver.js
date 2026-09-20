@@ -33,3 +33,21 @@ export function getAchievementImage(imageName) {
 
   return null;
 }
+
+/**
+ * Resolves a single image string or an array of image strings into an array of valid asset URLs.
+ * Filters out any null, empty, or unresolvable items.
+ */
+export function getAchievementImages(imagesInput) {
+  if (!imagesInput) return [];
+
+  const rawList = Array.isArray(imagesInput)
+    ? imagesInput
+    : typeof imagesInput === 'string' && imagesInput.trim() !== ''
+      ? [imagesInput]
+      : [];
+
+  return rawList
+    .map((img) => getAchievementImage(img))
+    .filter(Boolean);
+}

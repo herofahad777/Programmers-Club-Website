@@ -47,3 +47,6 @@ In `src/data/achievements.json`, specify only the filename:
 
 The application dynamically loads and bundles assets from this directory.
 ================================================================================
+
+Image Compression link -
+https://squoosh.app/

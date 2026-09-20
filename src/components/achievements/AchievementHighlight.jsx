@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sparkles, Calendar, Users, Shuffle, ChevronRight, Award, ExternalLink } from 'lucide-react';
-import { getAchievementImage } from './imageResolver';
+import { getAchievementImages } from './imageResolver';
 
 /**
  * AchievementHighlight — Contained spotlight banner above the stats bar.
@@ -31,7 +31,8 @@ export default function AchievementHighlight({ achievements = [], onSelect }) {
   if (highlightPool.length === 0) return null;
 
   const current = highlightPool[currentIndex % highlightPool.length];
-  const imageSrc = getAchievementImage(current.image);
+  const currentImages = getAchievementImages(current.images || current.image);
+  const imageSrc = currentImages[0] || null;
 
   const nextHighlight = () => {
     setCurrentIndex((prev) => (prev + 1) % highlightPool.length);
@@ -159,7 +160,7 @@ export default function AchievementHighlight({ achievements = [], onSelect }) {
                 </span>
                 <span className="inline-flex items-center gap-1 text-text-muted text-[11px]">
                   <Calendar className="w-3 h-3 text-text-muted" aria-hidden="true" />
-                  <span>{current.date || current.year}</span>
+                  <span>{current.date}</span>
                 </span>
               </div>
 

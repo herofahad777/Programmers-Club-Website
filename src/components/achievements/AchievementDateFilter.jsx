@@ -167,17 +167,6 @@ export default function AchievementDateFilter({
           </div>
         )}
       </div>
-
-      {/* Quick toggle if specific year is filtered */}
-      {selectedYear !== 'All' && (
-        <button
-          type="button"
-          onClick={() => onYearChange('All')}
-          className="mt-2.5 text-xs text-text-muted hover:text-primary transition-colors underline underline-offset-4 text-center"
-        >
-          Show All Years
-        </button>
-      )}
     </div>
   );
 }

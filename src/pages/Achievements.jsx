@@ -16,7 +16,19 @@ import EmptyState from '../components/achievements/EmptyState';
  */
 import achievementsData from '../data/achievements.json';
 
-const ALL_ACHIEVEMENTS = achievementsData.achievements || [];
+const ALL_ACHIEVEMENTS = (achievementsData.achievements || []).map((a) => {
+  // Automatically extract 4-digit year from date (e.g. "December 2025" -> 2025)
+  const parsedYear =
+    typeof a.date === 'string' && a.date.match(/\b(19\d\d|20\d\d)\b/)?.[0]
+      ? Number(a.date.match(/\b(19\d\d|20\d\d)\b/)[0])
+      : null;
+
+  return {
+    ...a,
+    year: parsedYear,
+  };
+});
+
 const AVAILABLE_YEARS = Array.from(
   new Set(ALL_ACHIEVEMENTS.map((a) => a.year).filter(Boolean))
 ).sort((a, b) => b - a);

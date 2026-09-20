@@ -2,179 +2,60 @@
   "achievements": [
     {
       "id": 1,
-      "title": "[DEMO] Smart India Hackathon 2025 — Grand Finale Finalists",
-      "date": "October 2025",
-      "year": 2025,
+      "title": "Smart India Hackathon 2025 - 1st Runner Up",
+      "date": "December 2025",
       "category": "Hackathon",
       "level": "National",
-      "description": "Selected among top teams nationally in SIH 2025 under the Ministry of Education problem statement, developing an AI-driven student mentorship platform.",
-      "winners": ["Student A (Leader)", "Student B", "Student C", "Student D"],
-      "image": "demo-sih-2025.svg",
+      "description": "CogniDetect is an AI-powered cognitive health screening platform designed for the early detection of potential dementia-related cognitive decline by analyzing speech patterns, cognitive assessment responses, eye movements, and behavioral indicators. It combines React, FastAPI, Python, AI/ML models, PostgreSQL, and Firebase Authentication to provide an accessible screening workflow and structured cognitive insights for users and healthcare professionals.",
+      "teamName": "NEURAL NEXUS",
+      "winners": [
+        "Aman Antuley (Leader)",
+        "Sumaiya Dadnak",
+        "Alamin Mondal",
+        "Zain Pawle"
+      ],
+      "organizerVenue": "The Ministry of Education, Government of India",
+      "links": [
+        {
+          "label": "LinkedIn",
+          "url": "https://www.linkedin.com/posts/aman-antuley-8974ab26a_sih2025-smartindiahackathon-teamneuralnexus-activity-7405132415393931264-D_08"
+        }
+      ],
+      "images": [
+        "id-1.webp"
+      ],
       "featured": true,
-      "demo": true
+      "demo": false
     },
     {
       "id": 2,
-      "title": "[DEMO] HackMIT 2025 — Global Semifinalist Award",
-      "date": "September 2025",
-      "year": 2025,
-      "category": "Hackathon",
-      "level": "International",
-      "description": "Developed an accessible real-time browser extension for visually impaired students, qualifying in the top 5% of global hackathon submissions.",
-      "winners": ["Student J", "Student K", "Student L"],
-      "image": "demo-hackmit-2025.svg",
-      "featured": true,
-      "demo": true
-    },
-    {
-      "id": 3,
-      "title": "[DEMO] Cloud-Native DevOps Workshop — GDG Certificate of Excellence",
-      "date": "March 2025",
-      "year": 2025,
-      "category": "Workshop",
-      "level": "State",
-      "description": "Earned Google Developer Group certificates after completing intensive hands-on Kubernetes and microservice architecture challenges.",
-      "winners": ["Student W", "Student X", "Student Y"],
-      "image": "",
-      "featured": false,
-      "demo": true
-    },
-    {
-      "id": 4,
-      "title": "[DEMO] IEEE Xtreme 18.0 — All-India Top 100",
-      "date": "November 2024",
-      "year": 2024,
-      "category": "Competitive Programming",
-      "level": "International",
-      "description": "Ranked #94 in India in the global 24-hour IEEE Xtreme competitive coding marathon, solving advanced dynamic programming and graph theory problems.",
-      "winners": ["Student E", "Student F", "Student G"],
-      "image": "demo-ieee-2024.svg",
-      "featured": true,
-      "demo": true
-    },
-    {
-      "id": 5,
-      "title": "[DEMO] AICTE-Sponsored Research — IoT Water Quality Sensor",
-      "date": "August 2024",
-      "year": 2024,
-      "category": "Research",
-      "level": "National",
-      "description": "Published peer-reviewed research on autonomous edge-computing IoT sensor matrices at the AICTE National Technical Symposium.",
-      "winners": ["Student H", "Student I"],
-      "image": "demo-research-2024.svg",
-      "featured": false,
-      "demo": true
-    },
-    {
-      "id": 6,
-      "title": "[DEMO] React Ecosystem Core — Merged Open Source Contribution",
-      "date": "July 2024",
-      "year": 2024,
-      "category": "Open Source",
-      "level": "International",
-      "description": "Contributed algorithmic optimizations and documentation improvements to the React Router ecosystem, successfully merged into the production codebase.",
-      "winners": ["Student M"],
-      "image": "demo-opensource-2024.svg",
-      "featured": false,
-      "demo": true
-    },
-    {
-      "id": 7,
-      "title": "[DEMO] AIKTC Annual Hackathon — 1st Place Innovation Award",
-      "date": "May 2024",
-      "year": 2024,
+      "title": "Internal Smart India Hackathon 2026 - 2nd Runner Up",
+      "date": "September 2026",
       "category": "Hackathon",
       "level": "College",
-      "description": "Won 1st place in the campus innovation track by engineering an AR indoor navigation system for college campus tours.",
-      "winners": ["Student S", "Student T", "Student U", "Student V"],
-      "image": "demo-internal-2024.svg",
-      "featured": false,
-      "demo": true
-    },
-    {
-      "id": 8,
-      "title": "[DEMO] LeetCode Biweekly Contest 142 — University Rank 1",
-      "date": "February 2024",
-      "year": 2024,
-      "category": "Competitive Programming",
-      "level": "College",
-      "description": "Secured 1st rank across all AIKTC participants with 4/4 algorithmic challenges solved within 52 minutes.",
-      "winners": ["Student Z"],
-      "image": "",
-      "featured": false,
-      "demo": true
-    },
-    {
-      "id": 9,
-      "title": "[DEMO] Maharashtra State Code Sprint — 2nd Runner Up",
-      "date": "December 2023",
-      "year": 2023,
-      "category": "Hackathon",
-      "level": "State",
-      "description": "Secured 2nd runner up in the state-level coding sprint by architecting high-throughput logistics routing algorithms.",
-      "winners": ["Student N", "Student O", "Student P"],
-      "image": "",
-      "featured": false,
-      "demo": true
-    },
-    {
-      "id": 10,
-      "title": "[DEMO] Published Paper — ML-Based Crop Disease Detection",
-      "date": "September 2023",
-      "year": 2023,
-      "category": "Publication",
-      "level": "National",
-      "description": "Published research in IJCA detailing lightweight convolutional neural network models for agricultural disease classification.",
-      "winners": ["Student Q", "Student R"],
-      "image": "",
-      "featured": false,
-      "demo": true
-    },
-    {
-      "id": 11,
-      "title": "[DEMO] Inter-Collegiate Webathon 2022 — Champion Trophy",
-      "date": "November 2022",
-      "year": 2022,
-      "category": "Hackathon",
-      "level": "District",
-      "description": "Designed and deployed a community emergency response dispatch portal in 36 hours, securing first place.",
-      "winners": ["Student AA", "Student BB", "Student CC"],
-      "image": "",
-      "featured": false,
-      "demo": true
-    },
-    {
-      "id": 12,
-      "title": "[DEMO] National Algorithm Bowl 2021 — Top 20 Finalist",
-      "date": "October 2021",
-      "year": 2021,
-      "category": "Competitive Programming",
-      "level": "National",
-      "description": "Represented AIKTC in the national algorithmic bowl, finishing in the top 20 collegiate teams across 300 participating institutions.",
-      "winners": ["Student DD", "Student EE"],
-      "image": "",
-      "featured": false,
-      "demo": true
-    }
-  ],
-  "gallery": [
-    {
-      "id": 1,
-      "title": "[DEMO] SIH 2025 Grand Finale Presentation",
-      "image": "",
-      "year": 2025
-    },
-    {
-      "id": 2,
-      "title": "[DEMO] IEEE Xtreme Certificate of Recognition",
-      "image": "",
-      "year": 2024
-    },
-    {
-      "id": 3,
-      "title": "[DEMO] AIKTC Annual Hackathon Winners Ceremony",
-      "image": "",
-      "year": 2024
+      "description": "PharmaLoop AI is a smart, multi-role platform designed to improve coordination, transparency, and accountability in healthcare-related workflows. It brings users, service providers, and administrators together through a streamlined digital experience, with tracking, verification, and reward-based engagement.",
+      "teamName": "PROMPT PILOTS",
+      "winners": [
+        "Sayed Hammaad Imtiyaz",
+        "Sayyed Anas Akbar",
+        "Jamadar Toufiq Rashid",
+        "Pirkhan Ayesha Abdul Vahid",
+        "Narbage Aachal Ranjit",
+        "Shaikh Mantasha Shakil Ahmed"
+      ],
+      "organizerVenue": "Anjuman-I-Islam's Kalsekar Technical Campus • New Panvel",
+      "links": [
+        {
+          "label": "LinkedIn",
+          "url": "https://www.linkedin.com/posts/sayed-hammaad-imtiyaz-722b92284_smartindiahackathon-sih2026-hackathon-activity-7502383329699328000-tJRc"
+        }
+      ],
+      "images": [
+        "id-2.webp",
+        "id-2_zoomin.webp"
+      ],
+      "featured": true,
+      "demo": false
     }
   ]
 }
