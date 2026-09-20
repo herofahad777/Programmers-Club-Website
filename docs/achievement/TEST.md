@@ -15,6 +15,9 @@
 ### 1. What Changed
 | Detail | Description |
 | :----- | :---------- |
+| **Precision Skeleton & Debug Mode** | Added exact 1:1 pixel-precision `AchievementSkeleton` with rich inner silhouette shapes, icons, and in-card media backdrops. Integrated a developer toggle (`Skeleton Debug: ON/OFF` and `?debug=skeleton`) to freeze and inspect the skeleton state anytime. |
+| **Progressive Scroll Skeleton** | Added scroll-triggered skeleton loading using `IntersectionObserver` that renders placeholder card skeletons at the bottom of the grid while fetching/revealing subsequent batches. |
+| **Leadership / Community Category** | Added `Leadership / Community` to the category dropdown filter and badge styling palette. |
 | **Section Removal** | Removed "Event Gallery & Memorabilia" and "Build Your Legacy" CTA sections from the page. |
 | **Card Detail Modal** | Added `AchievementDetailModal` triggered upon clicking any achievement card or top spotlight banner, displaying full high-res image, date, title, category/level, in-depth description, and recognized student roster. |
 | **Dynamic Stats** | Stats are calculated dynamically from `achievements` array (total count, hackathons, unique students recognized, national/international awards). |

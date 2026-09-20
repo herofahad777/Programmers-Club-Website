@@ -87,6 +87,14 @@ export default function AchievementCard({ achievement, index = 0, onSelect }) {
     >
       {/* 1. IMAGE OF THAT ACHIEVEMENT (16:9 Aspect Ratio) */}
       <div className="relative aspect-[16/9] w-full bg-surface overflow-hidden border-b border-border/70">
+        {/* Skeleton Backdrop while image loads */}
+        <div className="absolute inset-0 bg-surface flex flex-col items-center justify-center gap-2 text-text-muted/60 animate-pulse pointer-events-none">
+          <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-primary/40">
+            <Award className="w-5 h-5" aria-hidden="true" />
+          </div>
+          <span className="text-[10px] font-medium text-text-muted/70">Loading photo...</span>
+        </div>
+
         {resolvedImages.length > 0 && currentImage && !imageErrorMap[currentImage] ? (
           <AnimatePresence mode="wait">
             <motion.img
@@ -98,12 +106,12 @@ export default function AchievementCard({ achievement, index = 0, onSelect }) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
-              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+              className="relative z-10 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
             />
           </AnimatePresence>
         ) : (
-          <div className="w-full h-full flex flex-col items-center justify-center gap-1.5 text-text-muted bg-gradient-to-br from-surface to-surface-card p-4 text-center">
+          <div className="relative z-10 w-full h-full flex flex-col items-center justify-center gap-1.5 text-text-muted bg-gradient-to-br from-surface to-surface-card p-4 text-center">
             <Award className="w-8 h-8 text-primary/30" aria-hidden="true" />
             <span className="text-xs text-text-muted font-medium">Programmers Club Milestone</span>
           </div>

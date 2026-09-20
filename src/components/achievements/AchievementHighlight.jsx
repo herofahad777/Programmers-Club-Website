@@ -134,14 +134,23 @@ export default function AchievementHighlight({ achievements = [], onSelect }) {
           >
             {/* Image Preview (Left / Top) */}
             <div className="lg:col-span-5 aspect-[16/9] w-full rounded-xl overflow-hidden bg-surface-card border border-border/70 relative shrink-0">
+              {/* Skeleton Backdrop while image loads */}
+              <div className="absolute inset-0 bg-surface flex flex-col items-center justify-center gap-2 text-text-muted/60 animate-pulse pointer-events-none">
+                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-primary/40">
+                  <Award className="w-5 h-5" aria-hidden="true" />
+                </div>
+                <span className="text-[10px] font-medium text-text-muted/70">Loading photo...</span>
+              </div>
+
               {imageSrc ? (
                 <img
                   src={imageSrc}
                   alt={current.title}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  loading="lazy"
+                  className="relative z-10 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               ) : (
-                <div className="w-full h-full flex flex-col items-center justify-center gap-2 text-text-muted bg-gradient-to-br from-surface-card to-surface">
+                <div className="relative z-10 w-full h-full flex flex-col items-center justify-center gap-2 text-text-muted bg-gradient-to-br from-surface-card to-surface">
                   <Award className="w-10 h-10 text-primary/40" aria-hidden="true" />
                   <span className="text-xs text-text-muted">Featured Milestone</span>
                 </div>

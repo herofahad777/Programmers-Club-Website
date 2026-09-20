@@ -5,6 +5,7 @@ const CATEGORIES = [
   'All Categories',
   'Hackathon',
   'Competitive Programming',
+  'Leadership / Community',
   'Research',
   'Publication',
   'Open Source',
