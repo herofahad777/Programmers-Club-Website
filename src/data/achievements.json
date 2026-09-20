@@ -56,6 +56,30 @@
       ],
       "featured": true,
       "demo": false
+    },
+    {
+      "id": 3,
+      "title": "Google Student Ambassador 2026",
+      "date": "May 2026",
+      "category": "Leadership / Community",
+      "level": "National",
+      "description": "Selected as a Google Student Ambassador 2026, representing the student developer community and contributing to Google-led programs, learning initiatives, and technology-focused community activities. The role provides opportunities to engage with fellow students, promote technology awareness, and support knowledge sharing within the developer community.",
+      "teamName": "",
+      "winners": [
+        "JISHAN SHAKIL MOMIN"
+      ],
+      "organizerVenue": "Google",
+      "links": [
+        {
+          "label": "LinkedIn",
+          "url": "https://www.linkedin.com/posts/jishanmomin2606_google-gemini-googlestudentambassador-activity-7467574091290435584-lB0B"
+        }
+      ],
+      "images": [
+        "id-3.webp"
+      ],
+      "featured": true,
+      "demo": false
     }
   ]
 }
